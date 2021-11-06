@@ -15,6 +15,6 @@ namespace Business.Abstract
         IResult Update(Category category);
         IResult Delete(Category category);
         IDataResult<Category> GetCategoryById(int categoryId);
-        IDataResult<Category> GetCategoryByName(int categoryName);
+        IDataResult<Category> GetCategoryByName(string categoryName);
     }
 }

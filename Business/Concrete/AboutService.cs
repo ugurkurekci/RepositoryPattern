@@ -13,7 +13,7 @@ namespace Business.Concrete
 {
     public class AboutService : IAboutService
     {
-        IAboutDal _aboutDal;
+        private readonly IAboutDal _aboutDal;
 
         public AboutService(IAboutDal aboutDal)
         {

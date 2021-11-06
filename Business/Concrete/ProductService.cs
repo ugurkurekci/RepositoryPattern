@@ -41,6 +41,21 @@ namespace Business.Concrete
             return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductId == productId));
         }
 
+        public IDataResult<Product> GetProductByName(string productName)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IDataResult<List<Product>> GetProductByQuantity(int productQuantity)
+        {
+            throw new NotImplementedException();
+        }
+
+        public IDataResult<List<Product>> GetProductByUnitPrice(double productUnitPrice)
+        {
+            throw new NotImplementedException();
+        }
+
         public IResult Update(Product product)
         {
             _productDal.Update(product);
