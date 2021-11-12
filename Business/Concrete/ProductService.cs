@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Business.Concrete
 {
-    public class ProductService:IProductService
+    public class ProductService : IProductService
     {
         readonly IProductDal _productDal;
 
@@ -43,17 +43,18 @@ namespace Business.Concrete
 
         public IDataResult<Product> GetProductByName(string productName)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<Product>(_productDal.Get(p => p.ProductName == productName));
         }
 
         public IDataResult<List<Product>> GetProductByQuantity(int productQuantity)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.Quantity == productQuantity));
+
         }
 
         public IDataResult<List<Product>> GetProductByUnitPrice(double productUnitPrice)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<List<Product>>(_productDal.GetAll(p => p.UnitPrice == productUnitPrice));
         }
 
         public IResult Update(Product product)

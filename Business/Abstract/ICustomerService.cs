@@ -15,7 +15,8 @@ namespace Business.Abstract
         IResult Update(Customer customer);
         IResult Delete(Customer customer);
         IDataResult<Customer> GetCustomerById(int customerId);
-        IDataResult<Customer> GetCustomerByName(int customerName);
+        IDataResult<Customer> GetCustomerByName(string customerName);
+        IDataResult<Customer> GetCustomerFullName(string customerName,string customerLastName);
         IDataResult<Customer> GetCustomerByIdentityNumber(string customerIdentityNumber);
         IDataResult<Customer> GetCustomerByPhone(string customerPhone);
         IDataResult<List<Customer>> GetByCustomerAdress(string Adress);

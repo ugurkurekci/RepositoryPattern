@@ -34,22 +34,23 @@ namespace Business.Concrete
 
         public IDataResult<List<Country>> GetAll()
         {
-            return new SuccessDataResult<List<Country>>(_countryDal.GetAll(),AllMessages.CountryListed);
+            return new SuccessDataResult<List<Country>>(_countryDal.GetAll(), AllMessages.CountryListed);
         }
 
         public IDataResult<Country> GetCountryByCode(string countryCode)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<Country>(_countryDal.Get(p => p.CountryCode == countryCode));
         }
 
         public IDataResult<Country> GetCountryById(int countryId)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<Country>(_countryDal.Get(p => p.CountryId == countryId));
         }
 
         public IDataResult<Country> GetCountryByName(string countryName)
         {
-            throw new NotImplementedException();
+            return new SuccessDataResult<Country>(_countryDal.Get(p => p.CountryName == countryName));
+
         }
 
         public IResult Update(Country country)
