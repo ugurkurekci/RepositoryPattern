@@ -21,7 +21,9 @@ namespace Business.Autofac
             builder.RegisterType<ProductService>().As<IProductService>().SingleInstance();
             builder.RegisterType<ProductDal>().As<IProductDal>().SingleInstance();
 
-         
+            builder.RegisterType<AboutService>().As<IAboutService>().SingleInstance();
+            builder.RegisterType<AboutDal>().As<IAboutDal>().SingleInstance();
+
 
 
 

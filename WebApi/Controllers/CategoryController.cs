@@ -19,7 +19,7 @@ namespace WebApi.Controllers
         {
             _categoryService = categoryService;
         }
-        [HttpPost("category-Add")]
+        [HttpPost("categoryAdd")]
         public IActionResult CategoryAdd(Category category)
         {
             var result = _categoryService.Add(category);
@@ -30,5 +30,62 @@ namespace WebApi.Controllers
 
             return BadRequest(result.Message);
         }
+        [HttpPut("categoryUpdate")]
+        public IActionResult CategoryUpdate(Category category)
+        {
+            var result = _categoryService.Update(category);
+            if (result.Success)
+            {
+                return Ok(result.Message);
+            }
+
+            return BadRequest(result.Message);
+        }
+        [HttpDelete("categoryDelete")]
+        public IActionResult categoryDelete(Category category)
+        {
+            var result = _categoryService.Delete(category);
+            if (result.Success)
+            {
+                return Ok(result.Message);
+            }
+
+            return BadRequest(result.Message);
+        }
+
+        [HttpGet("categoryList")]
+        public IActionResult CategoryList()
+        {
+            var result = _categoryService.GetAll();
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+
+            return BadRequest(result.Message);
+        }
+        [HttpGet("categoryById")]
+        public IActionResult CategoryById(int id)
+        {
+            var result = _categoryService.GetCategoryById(id);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+
+            return BadRequest(result.Message);
+        }
+        [HttpGet("categoryByName")]
+        public IActionResult CategoryByName(string categorybyName)
+        {
+            var result = _categoryService.GetCategoryByName(categorybyName);
+            if (result.Success)
+            {
+                return Ok(result.Data);
+            }
+
+            return BadRequest(result.Message);
+        }
+
     }
 }
