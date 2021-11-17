@@ -8,13 +8,17 @@ using System.Threading.Tasks;
 
 namespace Business.Abstract
 {
-   public interface IOrderService
+    public interface IOrderService
     {
         IDataResult<List<Order>> GetAll();
         IResult Add(Order order);
         IResult Update(Order order);
         IResult Delete(Order order);
-        IDataResult<Order> GetOrderById(int orderId);
-        
+        IDataResult<List<Order>> GetOrderById(int orderId);
+        IDataResult<List<Order>> GetProductId(int productId);
+        IDataResult<List<Order>> GetCustomerId(int customerId);
+        IDataResult<List<Order>> GetCustomerAdress(string adress);
+        IDataResult<List<Order>> GetDatesorting(DateTime datesortingasc, DateTime datesortingdesc);
+
     }
 }
