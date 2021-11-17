@@ -20,7 +20,7 @@ namespace WebApi.Controllers
             _aboutService = aboutService;
         }
 
-        [HttpPost("AboutAdd")]
+        [HttpPost("aboutAdd")]
         public IActionResult AboutAdd(About about)
         {
             var result = _aboutService.Add(about);
@@ -31,7 +31,7 @@ namespace WebApi.Controllers
             return BadRequest(result.Message);
 
         }
-        [HttpPut("AboutUpdate")]
+        [HttpPut("aboutUpdate")]
         public IActionResult AboutUpdate(About about)
         {
             var result = _aboutService.Update(about);
@@ -43,10 +43,44 @@ namespace WebApi.Controllers
 
         }
 
-        [HttpDelete("AboutDelete")]
+        [HttpDelete("aboutDelete")]
         public IActionResult AboutDelete(About about)
         {
             var result = _aboutService.Delete(about);
+            if (result.Success)
+            {
+                return Ok(result.Message);
+            }
+            return BadRequest(result.Message);
+
+        }
+
+        [HttpGet("aboutGetAll")]
+        public IActionResult AboutGetAll()
+        {
+            var result = _aboutService.GetAll();
+            if (result.Success)
+            {
+                return Ok(result.Message);
+            }
+            return BadRequest(result.Message);
+
+        }
+        [HttpGet("aboutById")]
+        public IActionResult AboutById(int id)
+        {
+            var result = _aboutService.GetAboutById(id);
+            if (result.Success)
+            {
+                return Ok(result.Message);
+            }
+            return BadRequest(result.Message);
+
+        }
+        [HttpGet("aboutByDescription")]
+        public IActionResult AboutByDescription(string aboutDescription)
+        {
+            var result = _aboutService.GetAboutByDescription(aboutDescription);
             if (result.Success)
             {
                 return Ok(result.Message);
