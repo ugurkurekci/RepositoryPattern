@@ -14,7 +14,7 @@ namespace Business.Abstract
         IResult Add(Personal personal);
         IResult Update(Personal personal);
         IResult Delete(Personal personal);
-        IDataResult<Personal> GetCityById(int personalId);
+        IDataResult<Personal> GetPersonalById(int personalId);
         IDataResult<List<Personal>> GetPersonalByReferanceName(string referanceName);
         IDataResult<List<Personal>> GetPersonalWageScala(double personalWageScalaMin, double personalWageScalaMax);
        
