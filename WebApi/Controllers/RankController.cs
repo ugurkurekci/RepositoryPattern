@@ -20,7 +20,7 @@ namespace WebApi.Controllers
             _rankService = rankService;
         }
 
-        [HttpPost("rankAdd")]
+        [HttpPost("rankAdded")]
         public IActionResult RankAdd(Rank rank)
         {
             var result = _rankService.Add(rank);
