@@ -15,7 +15,7 @@ namespace DataAccess.Concrete
             optionsBuilder.UseSqlServer(@"Server=.\;Database=CookieOven;Trusted_Connection=true");
 
         }
-        
+
 
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
@@ -28,6 +28,7 @@ namespace DataAccess.Concrete
         public DbSet<Personal> Personals { get; set; }
         public DbSet<Rank> Ranks { get; set; }
         public DbSet<ShoppingCentre> ShoppingCentres { get; set; }
+        public DbSet<Invoice> Invoice { get; set; }
 
     }
 }
